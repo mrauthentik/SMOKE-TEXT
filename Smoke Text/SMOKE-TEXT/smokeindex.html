@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoke|Animated Css</title>
+    <link rel="stylesheet" href="smoke.css">
+</head>
+<body>
+    <section>
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. 
+            Eum optio totam, dolore est natus accusantium veniam illum 
+            aperiam sed vitae! Aliquid eos, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi unde itaque earum! Quisquam, aperiam quae? Cupiditate asperiores, obcaecati enim minus est quo rem,
+             voluptatem libero magni ex laudantium odit?
+            voluptatum sit harum unde odit modi necessitatibus obcaecati!
+        </p>
+    </section>
+
+    <script>
+        // now split text into letters
+        const text = document.querySelector('.text')
+        text.innerHTML = text.textContent.replace(/\S/g,
+        "<span>$&</span>")
+
+        // now add active class on hovered <span> tag
+        const letters = document.querySelectorAll('span')
+        for(let i=0; i<letters.length; i++){
+            letters[i].addEventListener("mouseover", ()=>{
+                letters[i].classList.add('active')
+            })
+        }
+    </script>
+</body>
+</html>
